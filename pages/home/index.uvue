@@ -1,0 +1,220 @@
+<template>
+	<view class="container">
+		<!-- 顶部功能入口 -->
+		<view class="feature-grid">
+			<view class="feature-item" @click="navigateToForum">
+				<!-- <image class="feature-icon" src="/static/palette.png"></image> -->
+				<text class="feature-text">盈亏论坛</text>
+			</view>
+			<view class="feature-item" @click="navigateToNFT">
+				<!-- <image class="feature-icon" src="/static/palette.png"></image> -->
+				<text class="feature-text">数字藏品</text>
+			</view>
+			<view class="feature-item" @click="navigateToAnnouncement">
+				<!-- <image class="feature-icon" src="/static/announcement.png"></image> -->
+				<text class="feature-text">公告管理</text>
+			</view>
+		</view>
+
+		<!-- 最新文章标题 -->
+		<view class="section-header">
+			<text class="section-title">最新文章</text>
+			<text class="see-more" @click="seeMore">查看更多</text>
+		</view>
+
+		
+
+	
+
+		
+		<!-- 悬浮 TabBar -->
+		<floating-tabbar :current-tab="0"></floating-tabbar>
+	</view>
+</template>
+
+
+<script setup>
+import FloatingTabbar from '@/components/floating-tabbar/index.uvue'
+
+</script>
+
+
+<style>
+/* 添加新的样式 */
+.feature-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.feature-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #FFFFFF;
+	padding: 15px;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 8px;
+}
+
+.feature-text {
+	font-size: 14px;
+	color: #333;
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+	margin-bottom: 15px;
+}
+
+.section-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+}
+
+.see-more {
+	font-size: 14px;
+	color: #666;
+}
+
+
+
+/* 修改原有的 container 样式 */
+.container {
+	padding: 15px;
+	padding-bottom: 100px;
+	background-color: #F8F8F8;
+}
+
+.search-bar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+.search-input {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #F5F5F5;
+	border-radius: 8px;
+	padding: 8px 12px;
+}
+
+.search-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+}
+
+.search-input input {
+	flex: 1;
+	font-size: 14px;
+}
+
+.filter-btn {
+	width: 40px;
+	height: 40px;
+	background-color: #F5F5F5;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.filter-btn image {
+	width: 24px;
+	height: 24px;
+}
+
+.category-scroll {
+	margin-bottom: 15px;
+}
+
+.category-list {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	padding: 5px 0;
+}
+
+.category-item {
+	padding: 8px 16px;
+	background-color: #F5F5F5;
+	border-radius: 20px;
+	font-size: 14px;
+	color: #666;
+}
+
+.category-item.active {
+	background-color: #000;
+	color: #FFF;
+}
+
+.nft-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+
+.nft-card {
+	background-color: #FFF;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nft-image {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+}
+
+.nft-info {
+	padding: 10px;
+}
+
+.nft-title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.nft-price {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+}
+
+.eth-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.nft-price text {
+	font-size: 14px;
+	color: #666;
+}
+
+
+.container {
+	padding-bottom: 75px;
+}
+</style>

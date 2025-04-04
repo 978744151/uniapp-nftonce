@@ -1,0 +1,15 @@
+{
+  "hash": "c0cc7ea8",
+  "configHash": "02768958",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "a7236da0",
+  "optimized": {
+    "@/mycomponents/node_modules/antd-mini/es/Button/index": {
+      "src": "../../../../../mycomponents/node_modules/antd-mini/es/Button/index.js",
+      "file": "@_mycomponents_node_modules_antd-mini_es_Button_index.js",
+      "fileHash": "0dc56be0",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}

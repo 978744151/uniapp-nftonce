@@ -1,0 +1,26 @@
+<template>
+	<view class="container">
+		<text class="title">Mine Page</text>
+	</view>
+</template>
+
+<script>
+export default {
+	data() {
+		return {}
+	},
+	methods: {}
+}
+</script>
+
+<style>
+.container {
+	padding: 15px;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+}
+</style>

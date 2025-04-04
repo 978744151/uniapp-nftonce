@@ -1,0 +1,207 @@
+<template>
+	<view class="container">
+		<!-- 搜索栏 -->
+		<view class="search-bar">
+			<view class="search-input">
+				<image class="search-icon" src="/static/search.svg"></image>
+				<input type="text" placeholder="搜索NFT" v-model="searchText" />
+			</view>
+			<view class="filter-btn">
+				<image src="/static/filter.svg"></image>
+			</view>
+		</view>
+
+		<!-- 分类标签 -->
+		<scroll-view class="category-scroll" scroll-x="true" show-scrollbar="false">
+			<view class="category-list">
+				<view v-for="(item, index) in categories" :key="index" 
+					:class="['category-item', selectedCategory === index ? 'active' : '']"
+					@click="selectCategory(index)">
+					{{item}}
+				</view>
+			</view>
+		</scroll-view>
+
+		<!-- NFT列表 -->
+		<view class="nft-grid">
+			<view v-for="(item, index) in nftList" :key="index" class="nft-card">
+				<!-- <image class="nft-image" :src="item.image"></image> -->
+				<view class="nft-info">
+					<text class="nft-title">{{item.title}}</text>
+					<view class="nft-price">
+						<image class="eth-icon" src="/static/eth.svg"></image>
+						<text>{{item.price}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 悬浮 TabBar -->
+		<floating-tabbar :current-tab="1"></floating-tabbar>
+	</view>
+	
+</template>
+
+<script>
+import FloatingTabbar from '@/components/floating-tabbar/index.uvue'
+
+export default {
+	components: {
+		FloatingTabbar
+	},
+	data() {
+		return {
+			searchText: '',
+			selectedCategory: 0,
+			categories: ['全部', '艺术', '收藏品', '音乐', '体育', '游戏', '摄影'],
+			nftList: [
+				{
+					image: '/static/nft1.png',
+					title: 'Bored Ape #1234',
+					price: '2.5'
+				},
+				{
+					image: '/static/nft2.png',
+					title: 'CryptoPunk #5678',
+					price: '3.2'
+				},
+				{
+					image: '/static/nft3.png',
+					title: 'Doodle #9012',
+					price: '1.8'
+				},
+				{
+					image: '/static/nft4.png',
+					title: 'Azuki #3456',
+					price: '4.1'
+				}
+			]
+		}
+	},
+	methods: {
+		selectCategory(index) {
+			this.selectedCategory = index
+		}
+	}
+}
+</script>
+
+<style>
+.container {
+	padding: 15px;
+}
+
+.search-bar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+.search-input {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #F5F5F5;
+	border-radius: 8px;
+	padding: 8px 12px;
+}
+
+.search-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+}
+
+.search-input input {
+	flex: 1;
+	font-size: 14px;
+}
+
+.filter-btn {
+	width: 40px;
+	height: 40px;
+	background-color: #F5F5F5;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.filter-btn image {
+	width: 24px;
+	height: 24px;
+}
+
+.category-scroll {
+	margin-bottom: 15px;
+}
+
+.category-list {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	padding: 5px 0;
+}
+
+.category-item {
+	padding: 8px 16px;
+	background-color: #F5F5F5;
+	border-radius: 20px;
+	font-size: 14px;
+	color: #666;
+}
+
+.category-item.active {
+	background-color: #000;
+	color: #FFF;
+}
+
+.nft-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+
+.nft-card {
+	background-color: #FFF;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nft-image {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+}
+
+.nft-info {
+	padding: 10px;
+}
+
+.nft-title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.nft-price {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+}
+
+.eth-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.nft-price text {
+	font-size: 14px;
+	color: #666;
+}
+</style>

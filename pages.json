@@ -1,0 +1,52 @@
+{
+	"pages": [ 
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/blog/index",
+			"style": {
+				"navigationBarTitleText": "博客",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/nft/index",
+			"style": {
+				"navigationBarTitleText": "NFT",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app x",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#333333",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black"
+	}
+}
