@@ -1,0 +1,17 @@
+
+export default {
+	data() {
+		return {}
+	},
+	methods: {}
+}
+
+
+function GenPagesMineIndexRender(): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createElementVNode("text", utsMapOf({ class: "title" }), "Mine Page")
+  ])
+}
+const GenPagesMineIndexStyles = []

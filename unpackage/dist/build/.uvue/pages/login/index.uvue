@@ -1,0 +1,96 @@
+import { userApi } from '@/api/user'
+
+
+
+export default {
+  __name: 'index',
+  setup(__props: GenPagesLoginIndex) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as GenPagesLoginIndex;
+const _cache = __ins.renderCache;
+
+const formState = reactive({
+	email: '',
+	password: ''
+})
+
+const handleLogin = async () => {
+	try {  
+		if (!formState.email || !formState.password) {
+			uni.showToast({
+				title: '请填写完整信息',
+				icon: 'none'
+			})
+			return
+		}
+		const res = await userApi.login(formState)
+		console.log('登录成功：', res)
+		// TODO: 调用登录接口
+        uni.showToast({
+			title: '登录成功',
+			icon: 'success'
+		})
+		setTimeout(() => {
+			router.push('/pages/home/index')
+		}, 1000)
+		// 登录成功后跳转
+	} catch (error) {
+		uni.showToast({
+			title: '登录失败',
+			icon: 'none'
+		})
+	}
+}
+
+
+return "INLINE_RENDER"
+}
+
+}
+
+function GenPagesLoginIndexRender(): any | null {
+
+  return createElementVNode("view", utsMapOf({ class: "login-container" }), [
+    createElementVNode("view", utsMapOf({ class: "login-background" }), [
+      createElementVNode("view", utsMapOf({ class: "login-shape" })),
+      createElementVNode("view", utsMapOf({ class: "login-shape" }))
+    ]),
+    createElementVNode("view", utsMapOf({ class: "login-form" }), [
+      createElementVNode("view", utsMapOf({ class: "header" }), [
+        createElementVNode("text", utsMapOf({ class: "title" }), "NFT-Once")
+      ]),
+      createElementVNode("view", utsMapOf({ class: "form-item" }), [
+        createElementVNode("text", utsMapOf({ class: "label" }), [
+          createElementVNode("text", utsMapOf({ class: "required" }), "*"),
+          "邮箱"
+        ]),
+        createElementVNode("input", utsMapOf({
+          class: "input",
+          type: "text",
+          placeholder: "请输入邮箱",
+          modelValue: unref(formState).email,
+          onInput: ($event: InputEvent) => {(unref(formState).email) = $event.detail.value}
+        }), null, 40, ["modelValue", "onInput"])
+      ]),
+      createElementVNode("view", utsMapOf({ class: "form-item" }), [
+        createElementVNode("text", utsMapOf({ class: "label" }), [
+          createElementVNode("text", utsMapOf({ class: "required" }), "*"),
+          "密码"
+        ]),
+        createElementVNode("input", utsMapOf({
+          class: "input",
+          type: "password",
+          placeholder: "请输入密码,不少于6位数",
+          modelValue: unref(formState).password,
+          onInput: ($event: InputEvent) => {(unref(formState).password) = $event.detail.value}
+        }), null, 40, ["modelValue", "onInput"])
+      ]),
+      createElementVNode("text", utsMapOf({ class: "auto-register" }), "未注册用户 自动注册"),
+      createElementVNode("button", utsMapOf({
+        class: "login-btn",
+        onClick: handleLogin
+      }), "登 录")
+    ])
+  ])
+}
+const GenPagesLoginIndexStyles = [utsMapOf([["login-container", padStyleMapOf(utsMapOf([["height", "100%"], ["position", "relative"], ["display", "flex"], ["alignItems", "center"], ["justifyContent", "center"], ["login-background", utsMapOf([["", utsMapOf([["position", "fixed"], ["width", "100%"], ["height", "100%"], ["top", 0], ["left", 0], ["zIndex", -1]])]])], ["login-shape", utsMapOf([["", utsMapOf([["position", "absolute"], ["borderRadius", "100rpx"]])]])], ["header", utsMapOf([["", utsMapOf([["textAlign", "center"], ["marginBottom", "40rpx"], ["marginTop", "40rpx"]])]])], ["title", utsMapOf([["", utsMapOf([["fontSize", "96rpx"], ["fontWeight", "bold"], ["marginBottom", "30rpx"]])]])], ["subtitle", utsMapOf([["", utsMapOf([["fontSize", "44rpx"], ["color", "#666666"]])]])], ["login-form", utsMapOf([["", utsMapOf([["backgroundColor", "rgba(255,255,255,0.9)"], ["borderRadius", "32rpx"], ["paddingTop", "30rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "30rpx"], ["marginTop", 0], ["marginRight", "auto"], ["marginBottom", 0], ["marginLeft", "auto"], ["width", "90%"], ["boxShadow", "0 8rpx 32rpx rgba(0,0,0,0.1)"]])]])], ["form-item", utsMapOf([["", utsMapOf([["marginBottom", "60rpx"]])]])], ["label", utsMapOf([["", utsMapOf([["fontSize", "32rpx"], ["color", "#333333"], ["marginBottom", "24rpx"]])]])], ["required", utsMapOf([["", utsMapOf([["color", "#ff4d4f"], ["marginRight", "8rpx"], ["fontSize", "32rpx"]])]])], ["auto-register", utsMapOf([["", utsMapOf([["fontSize", "28rpx"], ["color", "#666666"], ["marginTop", "40rpx"], ["marginRight", 0], ["marginBottom", "60rpx"], ["marginLeft", 0], ["textAlign", "center"]])]])], ["login-btn", utsMapOf([["", utsMapOf([["width", "100%"], ["height", "90rpx"], ["backgroundImage", "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)"], ["borderRadius", "45rpx"], ["color", "#ffffff"], ["fontSize", "32rpx"], ["borderWidth", "medium"], ["borderStyle", "none"], ["borderColor", "#000000"], ["boxShadow", "0 4rpx 16rpx rgba(33,150,243,0.3)"], ["transform:active", "scale(0.98)"], ["boxShadow:active", "0 2rpx 8rpx rgba(33,150,243,0.2)"]])]])]]))]])]

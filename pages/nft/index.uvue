@@ -87,15 +87,15 @@ export default {
 
 <style>
 .container {
-	padding: 15px;
+	padding: 15rpx;
 }
 
 .search-bar {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 10px;
-	margin-bottom: 15px;
+	/* gap: 10rpx; */
+	margin-bottom: 15rpx;
 }
 
 .search-input {
@@ -104,52 +104,44 @@ export default {
 	flex-direction: row;
 	align-items: center;
 	background-color: #F5F5F5;
-	border-radius: 8px;
-	padding: 8px 12px;
+	border-radius: 8rpx;
+	padding: 8rpx 12rpx;
 }
 
 .search-icon {
-	width: 20px;
-	height: 20px;
-	margin-right: 8px;
+	width: 20rpx;
+	height: 20rpx;
+	margin-right: 8rpx;
 }
 
-.search-input input {
-	flex: 1;
-	font-size: 14px;
-}
 
 .filter-btn {
-	width: 40px;
-	height: 40px;
+	width: 40rpx;
+	height: 40rpx;
 	background-color: #F5F5F5;
-	border-radius: 8px;
+	border-radius: 8rpx;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.filter-btn image {
-	width: 24px;
-	height: 24px;
-}
 
 .category-scroll {
-	margin-bottom: 15px;
+	margin-bottom: 15rpx;
 }
 
 .category-list {
 	display: flex;
 	flex-direction: row;
-	gap: 10px;
-	padding: 5px 0;
+	/* gap: 10rpx; */
+	padding: 5rpx 0;
 }
 
 .category-item {
-	padding: 8px 16px;
+	padding: 8rpx 16rpx;
 	background-color: #F5F5F5;
-	border-radius: 20px;
-	font-size: 14px;
+	border-radius: 20rpx;
+	font-size: 14rpx;
 	color: #666;
 }
 
@@ -159,49 +151,45 @@ export default {
 }
 
 .nft-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 15px;
+	/* display: grid; */
+	/* grid-template-columns: repeat(2, 1fr); */
+	/* gap: 15rpx; */
 }
 
 .nft-card {
 	background-color: #FFF;
-	border-radius: 12px;
+	border-radius: 12rpx;
 	overflow: hidden;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
 }
 
 .nft-image {
 	width: 100%;
-	height: 150px;
-	object-fit: cover;
+	height: 150rpx;
 }
 
 .nft-info {
-	padding: 10px;
+	padding: 10rpx;
 }
 
 .nft-title {
-	font-size: 14px;
+	font-size: 14rpx;
 	font-weight: bold;
 	color: #333;
-	margin-bottom: 5px;
+	margin-bottom: 5rpx;
 }
 
 .nft-price {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 5px;
+	/* gap: 5rpx; */
 }
 
 .eth-icon {
-	width: 16px;
-	height: 16px;
+	width: 16rpx;
+	height: 16rpx;
 }
 
-.nft-price text {
-	font-size: 14px;
-	color: #666;
-}
+
 </style>

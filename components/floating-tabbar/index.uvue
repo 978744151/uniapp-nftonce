@@ -39,17 +39,17 @@ const switchTab =  (index) => {
 <style>
 .floating-tab-bar {
 	position: fixed;
-	bottom: 20px;
+	bottom: 20rpx;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 90%;
-	height: 60px;
+	height: 60rpx;
 	background: #FFFFFF;
-	border-radius: 30px;
+	border-radius: 30rpx;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+	box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.1);
 	z-index: 100;
 	flex-direction: row;
 }
@@ -58,23 +58,23 @@ const switchTab =  (index) => {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 8px 0;
+	padding: 8rpx 0;
 }
 
 .tab-icon {
-	width: 24px;
-	height: 24px;
-	margin-bottom: 4px;
+	width: 24rpx;
+	height: 24rpx;
+	margin-bottom: 4rpx;
 }
 
 .tab-text {
-	font-size: 12px;
+	font-size: 12rpx;
 	color: #999;
 }
 
 .tab-item.active .tab-icon {
-	width: 24px;
-	height: 24px;
+	width: 24rpx;
+	height: 24rpx;
 }
 
 .tab-item.active .tab-text {

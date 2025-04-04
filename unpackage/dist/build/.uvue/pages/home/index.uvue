@@ -1,0 +1,50 @@
+import FloatingTabbar from '@/components/floating-tabbar/index.uvue'
+
+
+export default {
+  __name: 'index',
+  setup(__props: GenPagesHomeIndex) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as GenPagesHomeIndex;
+const _cache = __ins.renderCache;
+
+
+return "INLINE_RENDER"
+}
+
+}
+
+function GenPagesHomeIndexRender(): any | null {
+
+  return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createElementVNode("view", utsMapOf({ class: "feature-grid" }), [
+      createElementVNode("view", utsMapOf({
+        class: "feature-item",
+        onClick: _ctx.navigateToForum
+      }), [
+        createElementVNode("text", utsMapOf({ class: "feature-text" }), "盈亏论坛")
+      ], 8, ["onClick"]),
+      createElementVNode("view", utsMapOf({
+        class: "feature-item",
+        onClick: _ctx.navigateToNFT
+      }), [
+        createElementVNode("text", utsMapOf({ class: "feature-text" }), "数字藏品")
+      ], 8, ["onClick"]),
+      createElementVNode("view", utsMapOf({
+        class: "feature-item",
+        onClick: _ctx.navigateToAnnouncement
+      }), [
+        createElementVNode("text", utsMapOf({ class: "feature-text" }), "公告管理")
+      ], 8, ["onClick"])
+    ]),
+    createElementVNode("view", utsMapOf({ class: "section-header" }), [
+      createElementVNode("text", utsMapOf({ class: "section-title" }), "最新文章"),
+      createElementVNode("text", utsMapOf({
+        class: "see-more",
+        onClick: _ctx.seeMore
+      }), "查看更多", 8, ["onClick"])
+    ]),
+    createVNode(unref(FloatingTabbar), utsMapOf({ "current-tab": 0 }))
+  ])
+}
+const GenPagesHomeIndexStyles = [utsMapOf([["feature-grid", padStyleMapOf(utsMapOf([["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["marginBottom", "20rpx"]]))], ["feature-item", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"], ["backgroundColor", "#FFFFFF"], ["paddingTop", "15rpx"], ["paddingRight", "15rpx"], ["paddingBottom", "15rpx"], ["paddingLeft", "15rpx"], ["borderRadius", "12rpx"], ["boxShadow", "0 2rpx 8rpx rgba(0,0,0,0.05)"]]))], ["feature-icon", padStyleMapOf(utsMapOf([["width", "40rpx"], ["height", "40rpx"], ["marginBottom", "8rpx"]]))], ["feature-text", padStyleMapOf(utsMapOf([["fontSize", "14rpx"], ["color", "#333333"]]))], ["section-header", padStyleMapOf(utsMapOf([["display", "flex"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", 0], ["paddingRight", "15rpx"], ["paddingBottom", 0], ["paddingLeft", "15rpx"], ["marginBottom", "15rpx"]]))], ["section-title", padStyleMapOf(utsMapOf([["fontSize", "18rpx"], ["fontWeight", "bold"], ["color", "#333333"]]))], ["see-more", padStyleMapOf(utsMapOf([["fontSize", "14rpx"], ["color", "#666666"]]))], ["container", padStyleMapOf(utsMapOf([["paddingTop", "15rpx"], ["paddingRight", "15rpx"], ["paddingBottom", "75rpx"], ["paddingLeft", "15rpx"], ["backgroundColor", "#F8F8F8"]]))], ["search-bar", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["marginBottom", "15rpx"]]))], ["search-input", padStyleMapOf(utsMapOf([["flex", 1], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["backgroundColor", "#F5F5F5"], ["borderRadius", "8rpx"], ["paddingTop", "8rpx"], ["paddingRight", "12rpx"], ["paddingBottom", "8rpx"], ["paddingLeft", "12rpx"]]))], ["search-icon", padStyleMapOf(utsMapOf([["width", "20rpx"], ["height", "20rpx"], ["marginRight", "8rpx"]]))], ["filter-btn", padStyleMapOf(utsMapOf([["width", "40rpx"], ["height", "40rpx"], ["backgroundColor", "#F5F5F5"], ["borderRadius", "8rpx"], ["display", "flex"], ["alignItems", "center"], ["justifyContent", "center"]]))], ["category-scroll", padStyleMapOf(utsMapOf([["marginBottom", "15rpx"]]))], ["category-list", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "row"], ["paddingTop", "5rpx"], ["paddingRight", 0], ["paddingBottom", "5rpx"], ["paddingLeft", 0]]))], ["category-item", utsMapOf([["", utsMapOf([["paddingTop", "8rpx"], ["paddingRight", "16rpx"], ["paddingBottom", "8rpx"], ["paddingLeft", "16rpx"], ["backgroundColor", "#F5F5F5"], ["borderRadius", "20rpx"], ["fontSize", "14rpx"], ["color", "#666666"]])], [".active", utsMapOf([["backgroundColor", "#000000"], ["color", "#FFFFFF"]])]])], ["nft-card", padStyleMapOf(utsMapOf([["backgroundColor", "#FFFFFF"], ["borderRadius", "12rpx"], ["overflow", "hidden"], ["boxShadow", "0 2rpx 8rpx rgba(0,0,0,0.1)"]]))], ["nft-image", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "150rpx"]]))], ["nft-info", padStyleMapOf(utsMapOf([["paddingTop", "10rpx"], ["paddingRight", "10rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "10rpx"]]))], ["nft-title", padStyleMapOf(utsMapOf([["fontSize", "14rpx"], ["fontWeight", "bold"], ["color", "#333333"], ["marginBottom", "5rpx"]]))], ["nft-price", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]]))], ["eth-icon", padStyleMapOf(utsMapOf([["width", "16rpx"], ["height", "16rpx"]]))]])]

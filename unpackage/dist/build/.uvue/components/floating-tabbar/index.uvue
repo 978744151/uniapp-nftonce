@@ -1,0 +1,77 @@
+export default {
+  __name: 'index',
+  props: {
+	currentTab: {
+		type: Number,
+		default: 0
+	}
+},
+  emits: ['switchTab'],
+  setup(__props: GenComponentsFloatingTabbarIndex) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as GenComponentsFloatingTabbarIndex;
+const _cache = __ins.renderCache;
+
+const props = __props
+function emit(event: string, ...do_not_transform_spread: Array<any | null>) {
+__ins.emit(event, ...do_not_transform_spread)
+}
+const switchTab =  (index) => {
+			const routes = ['/pages/home/index', '/pages/nft/index', '/pages/blog/index', '/pages/mine/index'];
+			uni.navigateTo({
+				url: routes[index]
+			});
+		}
+
+
+return "INLINE_RENDER"
+}
+
+}
+
+function GenComponentsFloatingTabbarIndexRender(): any | null {
+
+  return createElementVNode("view", utsMapOf({ class: "floating-tab-bar" }), [
+    createElementVNode("view", utsMapOf({
+      class: normalizeClass(["tab-item", utsMapOf({ active: _ctx.currentTab === 0 })]),
+      onClick: () => {switchTab(0)}
+    }), [
+      createElementVNode("image", utsMapOf({
+        class: "tab-icon",
+        src: _ctx.currentTab === 0 ? '/static/tabbar/home-active.svg' : '/static/tabbar/home.svg'
+      }), null, 8, ["src"]),
+      createElementVNode("text", utsMapOf({ class: "tab-text" }), "首页")
+    ], 10, ["onClick"]),
+    createElementVNode("view", utsMapOf({
+      class: normalizeClass(["tab-item", utsMapOf({ active: _ctx.currentTab === 1 })]),
+      onClick: () => {switchTab(1)}
+    }), [
+      createElementVNode("image", utsMapOf({
+        class: "tab-icon",
+        src: _ctx.currentTab === 1 ? '/static/tabbar/eth-active.svg' : '/static/tabbar/eth.svg'
+      }), null, 8, ["src"]),
+      createElementVNode("text", utsMapOf({ class: "tab-text" }), "藏品")
+    ], 10, ["onClick"]),
+    createElementVNode("view", utsMapOf({
+      class: normalizeClass(["tab-item", utsMapOf({ active: _ctx.currentTab === 2 })]),
+      onClick: () => {switchTab(2)}
+    }), [
+      createElementVNode("image", utsMapOf({
+        class: "tab-icon",
+        src: _ctx.currentTab === 2 ? '/static/tabbar/community-active.svg' : '/static/tabbar/community.svg'
+      }), null, 8, ["src"]),
+      createElementVNode("text", utsMapOf({ class: "tab-text" }), "社区")
+    ], 10, ["onClick"]),
+    createElementVNode("view", utsMapOf({
+      class: normalizeClass(["tab-item", utsMapOf({ active: _ctx.currentTab === 3 })]),
+      onClick: () => {switchTab(3)}
+    }), [
+      createElementVNode("image", utsMapOf({
+        class: "tab-icon",
+        src: _ctx.currentTab === 3 ? '/static/tabbar/mine-active.svg' : '/static/tabbar/mine.svg'
+      }), null, 8, ["src"]),
+      createElementVNode("text", utsMapOf({ class: "tab-text" }), "我的")
+    ], 10, ["onClick"])
+  ])
+}
+const GenComponentsFloatingTabbarIndexStyles = [utsMapOf([["floating-tab-bar", padStyleMapOf(utsMapOf([["position", "fixed"], ["bottom", "20rpx"], ["left", "50%"], ["transform", "translateX(-50%)"], ["width", "90%"], ["height", "60rpx"], ["backgroundColor", "#FFFFFF"], ["borderRadius", "30rpx"], ["display", "flex"], ["justifyContent", "space-around"], ["alignItems", "center"], ["boxShadow", "0 4rpx 16rpx rgba(0,0,0,0.1)"], ["zIndex", 100], ["flexDirection", "row"]]))], ["tab-item", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"], ["paddingTop", "8rpx"], ["paddingRight", 0], ["paddingBottom", "8rpx"], ["paddingLeft", 0]]))], ["tab-icon", utsMapOf([["", utsMapOf([["width", "24rpx"], ["height", "24rpx"], ["marginBottom", "4rpx"]])], [".tab-item.active ", utsMapOf([["width", "24rpx"], ["height", "24rpx"]])]])], ["tab-text", utsMapOf([["", utsMapOf([["fontSize", "12rpx"], ["color", "#999999"]])], [".tab-item.active ", utsMapOf([["color", "#2196F3"]])]])]])]
